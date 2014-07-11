@@ -23,14 +23,6 @@ id: home
 </div>
 <br><br>
 
-### Selected Works
-
-<div class="tiles">
-{% for post in site.categories.works limit:4 %}
-  {% include post-grid.html %}
-{% endfor %}
-</div><!-- /.tiles -->
-
 ---
 
 ### Latest Articles
