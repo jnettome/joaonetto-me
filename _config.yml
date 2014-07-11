@@ -4,7 +4,7 @@ description: "passionate web and mobile developer that loves new technologies"
 logo: bio-photo.jpg # 120x120 px default image used for Twitter summary card
 teaser: bio-photo.jpg # 400x250 px default teaser image used in image archive grid
 locale: en_US
-url: http://localhost:4000
+url: http://joaonetto.me
 
 # Jekyll configuration
 
