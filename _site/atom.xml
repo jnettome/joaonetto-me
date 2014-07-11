@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+    
+
+    <title>João Netto</title>
+    <generator uri="https://github.com/jekyll/jekyll">Jekyll v2.1.1</generator>
+		<icon>http://joaonetto.me/apple-touch-icon-precomposed.png</icon>
+    <subtitle>passionate web and mobile developer that loves new technologies</subtitle>
+    <link href="http://joaonetto.me/atom.xml" rel="self"/>
+    <link href="http://joaonetto.me/" rel="alternate" type="text/html"/>
+    <updated>2014-07-11T15:12:06-03:00</updated>
+    <id>http://joaonetto.me/</id>
+    <author>
+			<name>João Netto</name>
+			<uri>http://joaonetto.me/</uri>
+			<email>hi@joaonetto.me</email>
+		</author>
+
+    
+    <entry>
+        <title>Let your Rails Generator accept boolean parameters</title>
+        <link href="http://joaonetto.me/articles/parameters-in-rails-generators/"/>
+        <updated>2014-02-07T00:00:00-02:00</updated>
+        <id>http://joaonetto.me/articles/parameters-in-rails-generators</id>
+        <author>
+					<name>João Netto</name>
+					<uri>http://joaonetto.me/</uri>
+					<email>hi@joaonetto.me</email>
+				</author>
+        <content type="html">
+        	&lt;img src=&quot;http://joaonetto.me/images/command-line-feature.jpg&quot;&gt;&lt;br/&gt;
+        	&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;class_option &lt;span style=&quot;color:#A60&quot;&gt;:stylesheet&lt;/span&gt;, &lt;span style=&quot;color:#A60&quot;&gt;:type&lt;/span&gt; =&amp;gt; &lt;span style=&quot;color:#A60&quot;&gt;:boolean&lt;/span&gt;, &lt;span style=&quot;color:#A60&quot;&gt;:default&lt;/span&gt; =&amp;gt; &lt;span style=&quot;color:#069&quot;&gt;true&lt;/span&gt;, &lt;span style=&quot;color:#A60&quot;&gt;:description&lt;/span&gt; =&amp;gt; &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;Include stylesheet file&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;so you can pass &lt;code&gt;--stylesheet&lt;/code&gt; on command line.&lt;/p&gt;
+
+&lt;p&gt;to check this value on your generator class, use &lt;code&gt;options.stylesheet?&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;if you want to use something like &lt;code&gt;--two-words&lt;/code&gt;, do:&lt;/p&gt;
+
+&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;class_option &lt;span style=&quot;color:#A60&quot;&gt;&lt;span style=&quot;color:#A60&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#740&quot;&gt;&#39;&lt;/span&gt;&lt;span style=&quot;color:#A60&quot;&gt;no-coffeescript&lt;/span&gt;&lt;span style=&quot;color:#740&quot;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span style=&quot;color:#A60&quot;&gt;:type&lt;/span&gt; =&amp;gt; &lt;span style=&quot;color:#A60&quot;&gt;:boolean&lt;/span&gt;, &lt;span style=&quot;color:#A60&quot;&gt;:default&lt;/span&gt; =&amp;gt; &lt;span style=&quot;color:#069&quot;&gt;false&lt;/span&gt;, &lt;span style=&quot;color:#A60&quot;&gt;:desc&lt;/span&gt; =&amp;gt; &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&#39;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;Skips coffeescript replacement into app generators&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&#39;&lt;/span&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;and to check&lt;/p&gt;
+
+&lt;div&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line-numbers&quot;&gt;&lt;a href=&quot;#n1&quot; name=&quot;n1&quot;&gt;1&lt;/a&gt;&lt;/span&gt;options[&lt;span style=&quot;color:#A60&quot;&gt;&lt;span style=&quot;color:#A60&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#740&quot;&gt;&#39;&lt;/span&gt;&lt;span style=&quot;color:#A60&quot;&gt;no-coffeescript&lt;/span&gt;&lt;span style=&quot;color:#740&quot;&gt;&#39;&lt;/span&gt;&lt;/span&gt;]
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;as seen on &lt;a href=&quot;http://railscasts.com/episodes/218-making-generators-in-rails-3?view=asciicast&quot;&gt;RailsCasts&lt;/a&gt;.&lt;/p&gt;
+
+        </content>
+    </entry>
+    
+    <entry>
+        <title>Relic Scout</title>
+        <link href="http://joaonetto.me/work/relic-scout/"/>
+        <updated>2013-08-27T00:00:00-03:00</updated>
+        <id>http://joaonetto.me/work/relic-scout</id>
+        <author>
+					<name>João Netto</name>
+					<uri>http://joaonetto.me/</uri>
+					<email>hi@joaonetto.me</email>
+				</author>
+        <content type="html">
+        	&lt;img src=&quot;http://joaonetto.me/images/relic-scout-home-feature.gif&quot;&gt;&lt;br/&gt;
+        	&lt;p&gt;Eko Wave, a company started by &lt;a href=&quot;http://twitter.com/endonend&quot;&gt;two&lt;/a&gt; &lt;a href=&quot;http://twitter.com/bjpmba&quot;&gt;pals&lt;/a&gt; and myself, just took the wraps off our first app — &lt;a href=&quot;http://relicscout.com&quot;&gt;&lt;strong&gt;Relic Scout&lt;/strong&gt;&lt;/a&gt;. Last week we launched a teaser site and couldn’t be prouder of the work that we’ve done so far.&lt;/p&gt;
+
+&lt;p&gt;I had a lot of fun creating the 8bit pixel art and applying a parallax effect to it using the &lt;a href=&quot;https://github.com/cameronmcefee/plax&quot;&gt;jQuery plugin Plax&lt;/a&gt;. If you collect sports cards, magic cards, coins, or comics, you really should check it out.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;a href=&quot;http://relicscout.com&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;http://joaonetto.me/images/relic-scout-browser-750.jpg&quot; alt=&quot;Relic Scout homepage screenshot&quot; /&gt;&lt;/a&gt;
+  &lt;figcaption&gt;Relic Scout homepage&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p class=&quot;notice&quot;&gt;To learn more about becoming a beta tester, launch details and the latest news, &lt;a href=&quot;http://relicscout.com&quot;&gt;sign up for our newsletter&lt;/a&gt;. You can also follow Relic Scount on &lt;a href=&quot;http://twitter.com/relicscout&quot;&gt;Twitter&lt;/a&gt;, &lt;a href=&quot;http://facebook.com/relicscout&quot;&gt;Facebook&lt;/a&gt;, and &lt;a href=&quot;https://plus.google.com/107525823728844423825&quot;&gt;Google+&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;PS: I hid some fun things in the site design, let me know if you find them. :-)&lt;/em&gt;&lt;/p&gt;
+
+        </content>
+    </entry>
+    
+</feed>

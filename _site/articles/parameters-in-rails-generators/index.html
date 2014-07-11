@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Let your Rails Generator accept boolean parameters • João Netto</title>
+    <meta name="description" content="How to permit options like --skip-stylesheets on your generators">
+    <meta name="keywords" content="rails, snippets, quick tip">
+    
+    
+    	<!-- Twitter Cards -->
+	<meta name="twitter:title" content="Let your Rails Generator accept boolean parameters">
+	<meta name="twitter:description" content="How to permit options like --skip-stylesheets on your generators">
+	<meta name="twitter:site" content="@jnettome">
+	<meta name="twitter:creator" content="@jnettome">
+	
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="http://joaonetto.me/images/command-line-feature.jpg">
+	
+	<!-- Open Graph -->
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Let your Rails Generator accept boolean parameters">
+	<meta property="og:description" content="How to permit options like --skip-stylesheets on your generators">
+	<meta property="og:url" content="http://joaonetto.me/articles/parameters-in-rails-generators/">
+	<meta property="og:site_name" content="João Netto">
+    <link rel="author" href="https://plus.google.com/111092052554396666461"/>
+
+    <link rel="canonical" href="http://joaonetto.me/articles/parameters-in-rails-generators/">
+
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="João Netto Atom Feed">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+
+    <style>
+    .sliding-menu-content {
+      top: 0;
+      right: 0;
+      text-align: center;
+      visibility: hidden;
+      height: 100%;
+      width: 100%;
+      -webkit-transform: translateX(100%);
+      -moz-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+      -o-transform: translateX(100%);
+      transform: translateX(100%);
+    }
+    </style>
+
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- HTML5 Shiv and Media Query Support for IE -->
+    <!--[if lt IE 9]>
+      <script src="/js/vendor/html5shiv.min.js"></script>
+      <script src="/js/vendor/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+    <header id="masthead">
+  <div class="inner-wrap">
+    <a href="/" class="site-title">João Netto</a>
+    <nav role="navigation" class="menu top-menu">
+        <ul class="menu-item">
+	<li class="home"><a href="/">João Netto</a></li>
+	
+    <li><a href="/articles/">Articles</a></li>
+  
+    <li><a href="/about/">About</a></li>
+  
+</ul>
+    </nav>
+  </div><!-- /.inner-wrap -->
+</header><!-- /.masthead -->
+    <nav role="navigation" class="js-menu sliding-menu-content">
+	<ul class="menu-item">
+		<li>
+			<a href="/articles/" class="title">Articles</a>
+			<p class="excerpt">My personal sight about tech and challenges</p>
+		</li><li>
+			<a href="/about/" class="title">About</a>
+			<p class="excerpt">More than a passionate web and mobile developer</p>
+		</li>
+	</ul>
+</nav>
+<button type="button" class="js-menu-trigger sliding-menu-button lines-button x2" role="button" aria-label="Toggle Navigation">
+	<span class="lines"></span>
+</button>
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+    <div id="page-wrapper">
+      <!--[if lt IE 9]><div class="upgrade notice-danger"><strong>Your browser is quite old!</strong> Why not <a href="http://whatbrowser.org/">upgrade to a newer one</a> to better enjoy this site?</div><![endif]-->
+
+      <div id="main" role="main">
+	<article class="wrap" itemscope itemtype="http://schema.org/Article">
+		
+		<div class="page-feature">
+			<div class="page-image">
+				<img src="/images/command-line-feature.jpg" class="page-feature-image" alt="Let your Rails Generator accept boolean parameters" itemprop="image">
+				
+			</div><!-- /.page-image -->
+		</div><!-- /.page-feature -->
+		
+		<nav class="breadcrumbs">
+  <a href="/">Home</a> <span class="divider">/</span> <a href="/articles/">Articles</a> <span class="divider">/</span>
+</nav><!-- /.breadcrumbs -->
+		<div class="page-title">
+			<h1>Let your Rails Generator accept boolean parameters</h1>
+		</div>
+		<div class="inner-wrap">
+			<nav class="toc"></nav><!-- /.toc -->
+			<div id="content" class="page-content" itemprop="articleBody">
+				<div><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>class_option <span style="color:#A60">:stylesheet</span>, <span style="color:#A60">:type</span> =&gt; <span style="color:#A60">:boolean</span>, <span style="color:#A60">:default</span> =&gt; <span style="color:#069">true</span>, <span style="color:#A60">:description</span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Include stylesheet file</span><span style="color:#710">&quot;</span></span>
+</pre></div>
+</div>
+</div>
+
+<p>so you can pass <code>--stylesheet</code> on command line.</p>
+
+<p>to check this value on your generator class, use <code>options.stylesheet?</code></p>
+
+<p>if you want to use something like <code>--two-words</code>, do:</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>class_option <span style="color:#A60"><span style="color:#A60">:</span><span style="color:#740">'</span><span style="color:#A60">no-coffeescript</span><span style="color:#740">'</span></span>, <span style="color:#A60">:type</span> =&gt; <span style="color:#A60">:boolean</span>, <span style="color:#A60">:default</span> =&gt; <span style="color:#069">false</span>, <span style="color:#A60">:desc</span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Skips coffeescript replacement into app generators</span><span style="color:#710">'</span></span>
+</pre></div>
+</div>
+</div>
+
+<p>and to check</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>options[<span style="color:#A60"><span style="color:#A60">:</span><span style="color:#740">'</span><span style="color:#A60">no-coffeescript</span><span style="color:#740">'</span></span>]
+</pre></div>
+</div>
+</div>
+
+<p>as seen on <a href="http://railscasts.com/episodes/218-making-generators-in-rails-3?view=asciicast">RailsCasts</a>.</p>
+
+				<hr />
+				<footer class="page-footer">
+					
+
+
+<div class="author-image">
+	<img src="/images/bio-photo-byline.jpg" alt="João Netto">
+</div><!-- ./author-image -->
+<div class="author-content">
+	<h3 class="author-name" >Written by <span itemprop="author">João Netto</span></h3>
+	<p class="author-bio">full-stack web and mobile developer</p>
+</div><!-- ./author-content -->
+					<div class="inline-btn">
+	<a class="btn-social twitter" href="https://twitter.com/intent/tweet?text=Let your Rails Generator accept boolean parameters&amp;url=http://joaonetto.me/articles/parameters-in-rails-generators/&amp;via=jnettome" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Share on Twitter</a>
+	<a class="btn-social facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://joaonetto.me/articles/parameters-in-rails-generators/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> Share on Facebook</a>
+	<a class="btn-social google-plus"  href="https://plus.google.com/share?url=http://joaonetto.me/articles/parameters-in-rails-generators/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i> Share on Google+</a>
+</div><!-- /.share-this -->
+					<div class="page-meta">
+	<p>Updated <time datetime="2014-02-07T00:00:00Z" itemprop="datePublished">February 07, 2014</time></p>
+</div><!-- /.page-meta -->
+				</footer><!-- /.footer -->
+				<aside>
+					
+				</aside>
+			</div><!-- /.content -->
+		</div><!-- /.inner-wrap -->
+	</article><!-- ./wrap -->
+</div><!-- /#main -->
+
+
+      <footer role="contentinfo" id="site-footer">
+	<nav role="navigation" class="menu bottom-menu">
+		<ul class="menu-item">
+		
+			<li><a href="/">Home</a></li>
+		
+			<li><a href="/about/">About</a></li>
+		
+		</ul>
+	</nav><!-- /.bottom-menu -->
+	<p class="copyright">&#169; 2014 <a href="/">João Netto</a> powered by <a href="http://jekyllrb.com">Jekyll</a> + <a href="http://mademistakes.com">Skinny Bones</a>.</p>
+</footer>
+    </div>
+
+    <div id="scroll-cue" onclick="$('html,body').animate({scrollTop: $('#content').offset().top}, 1000)">Scroll
+	<svg class="hang" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><g></g><path d="M24.773 13.701c-0.651 0.669-7.512 7.205-7.512 7.205-0.349 0.357-0.805 0.534-1.261 0.534-0.458 0-0.914-0.178-1.261-0.534 0 0-6.861-6.536-7.514-7.205-0.651-0.669-0.696-1.87 0-2.586 0.698-0.714 1.669-0.77 2.522 0l6.253 5.997 6.251-5.995c0.854-0.77 1.827-0.714 2.522 0 0.698 0.714 0.654 1.917 0 2.584z" fill="#ffffff" /></svg>
+</div>
+
+    <script src="/js/vendor/jquery-1.9.1.min.js"></script>
+    <script src="/js/main.js"></script>
+    
+    
+
+    
+    <script type="text/javascript">
+	    $("#scroll-cue").hide();
+	    // disable on touch devices
+	    if ('ontouchstart' in document.documentElement == false) {
+        $("#scroll-cue").show(); 
+        // remove scroll cue when content is in view
+        window.onscroll = function () {
+          var height = $(window).height();
+          var scrollTop = $(window).scrollTop();
+          var obj = $("#content")
+          var pos = obj.position();
+          if (height + scrollTop > pos.top) {
+  	        $("#scroll-cue").hide();
+          }
+          else {
+  	        $("#scroll-cue").show(); 
+          }
+  	    }
+      }
+    </script>
+    
+
+  </body>
+
+</html>
