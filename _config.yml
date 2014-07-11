@@ -3,7 +3,7 @@ title: João Netto
 description: "passionate web and mobile developer that loves new technologies"
 logo: bio-photo.jpg # 120x120 px default image used for Twitter summary card
 teaser: bio-photo.jpg # 400x250 px default teaser image used in image archive grid
-locale: pt_BR
+locale: en_US
 url: http://localhost:4000
 
 # Jekyll configuration
@@ -15,9 +15,6 @@ sass:
 permalink: /:categories/:title/
 markdown: kramdown
 highlighter: pygments
-gems:
-  - jekyll-sitemap
-
 
 # Site owner
 owner:
@@ -25,14 +22,11 @@ owner:
   email: hi@joaonetto.me
   twitter: jnettome
   google:
-    ad-client:
-    ad-slot:
-    analytics: UA-201XXXX-X
-    plus: http://plus.google.com/118238196859537351XXX
-  bio: "Programador web e mobile, apaixonado por novas tecnologias."
-  avatar: bio-photo.jpg # 160x160 px image for author byline
+    analytics: UA-19971072-1
+    plus: http://plus.google.com/111092052554396666461
+  bio: "full-stack web and mobile developer"
+  avatar: bio-photo-byline.jpg # 80x80px
 disqus-shortname: jnettome
-
 
 
 include: [".htaccess"]

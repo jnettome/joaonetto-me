@@ -26,7 +26,7 @@ id: home
 ### Selected Works
 
 <div class="tiles">
-{% for post in site.categories.works limit:3 %}
+{% for post in site.categories.works limit:4 %}
   {% include post-grid.html %}
 {% endfor %}
 </div><!-- /.tiles -->
@@ -36,7 +36,7 @@ id: home
 ### Latest Articles
 
 <div class="tiles">
-{% for post in site.categories.articles limit:3 %}
+{% for post in site.categories.articles limit:4 %}
   {% include post-grid.html %}
 {% endfor %}
 </div><!-- /.tiles -->
