@@ -8,7 +8,7 @@ id: home
 
 <div id="content" class="page-content" itemprop="articleBody">
   <p>
-    Full-stack web and mobile developer (living in Brazil), I help people to reach success solving their problems using agile metodologies and lean startup concepts.
+    Full-stack web and mobile developer (living in Brazil), I help people to reach success solving their problems using agile methodologies and lean startup concepts.
   </p>
 
   <p>
