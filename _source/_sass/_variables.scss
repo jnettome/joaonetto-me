@@ -4,7 +4,7 @@
 // Typography variables
 
 $base-font                   	: Georgia,Times,"Times New Roman",serif;
-$heading-font                	: "Helvetica Neue","Segoe UI",Arial,sans-serif;
+$heading-font                	: "Lato","Arvo","Helvetica Neue",Arial,sans-serif;
 $caption-font                	: $base-font;
 $code-font                   	: monospace;
 $alt-font                    	: $heading-font;
@@ -17,10 +17,10 @@ $border-radius               	: 3px;
 
 // Color variables
 
-$body-color                  	: #ebebeb;
+$body-color                  	: #FAFFF5;
 $text-color                  	: #313130;
-$base-color                  	: #343434;    
-$comp-color                  	: complement($base-color); 
+$base-color                  	: #343434;
+$comp-color                  	: complement($base-color);
 $border-color                	: #ddd;
 $white                       	: #fff;
 $black                       	: #000;
@@ -73,7 +73,7 @@ $sliding-menu-color 	 		: $white;
 $sliding-menu-background-hover	: $black;
 $sliding-menu-color-hover	 	: $white;
 $sliding-menu-border   			: 1px solid $sliding-menu-border-color;
-$button-size		         	: 30px; 
+$button-size		         	: 30px;
 $transition						: .3s; // increase this to see the transformations in slow-motion
 
 
