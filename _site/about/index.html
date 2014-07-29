@@ -159,7 +159,7 @@
 
     <script src="/js/vendor/jquery-1.9.1.min.js"></script>
     <script src="/js/main.js"></script>
-    
+
     
     <script type="text/javascript">
       $('.toc').toc({
@@ -167,7 +167,7 @@
         'container': '.page-content', //element to find all selectors in
         'smoothScrolling': true, //enable or disable smooth scrolling on click
         'prefix': 'toc', //prefix for anchor tags and class names
-        'onHighlight': function(el) {}, //called when a new section is highlighted 
+        'onHighlight': function(el) {}, //called when a new section is highlighted
         'highlightOnScroll': true, //add class to heading that is currently in focus
         'highlightOffset': 100, //offset to trigger the next headline
         'anchorName': function(i, heading, prefix) { //custom function for anchor name
@@ -184,7 +184,19 @@
     
 
     
+    <script type=”text/javascript”>
 
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-19971072-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+      var ga = document.createElement(‘script’); ga.type = ‘text/javascript’; ga.async = true;
+      ga.src = (‘https:’ == document.location.protocol ? ‘https://ssl’ : ‘http://www’) + ‘.google-analytics.com/ga.js’;
+      var s = document.getElementsByTagName(‘script’)[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      </script>
   </body>
 
 </html>

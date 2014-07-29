@@ -168,7 +168,7 @@
 
     <script src="/js/vendor/jquery-1.9.1.min.js"></script>
     <script src="/js/main.js"></script>
-    
+
     
 
     
@@ -176,7 +176,7 @@
 	    $("#scroll-cue").hide();
 	    // disable on touch devices
 	    if ('ontouchstart' in document.documentElement == false) {
-        $("#scroll-cue").show(); 
+        $("#scroll-cue").show();
         // remove scroll cue when content is in view
         window.onscroll = function () {
           var height = $(window).height();
@@ -187,13 +187,25 @@
   	        $("#scroll-cue").hide();
           }
           else {
-  	        $("#scroll-cue").show(); 
+  	        $("#scroll-cue").show();
           }
   	    }
       }
     </script>
     
+    <script type=”text/javascript”>
 
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-19971072-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+      var ga = document.createElement(‘script’); ga.type = ‘text/javascript’; ga.async = true;
+      ga.src = (‘https:’ == document.location.protocol ? ‘https://ssl’ : ‘http://www’) + ‘.google-analytics.com/ga.js’;
+      var s = document.getElementsByTagName(‘script’)[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      </script>
   </body>
 
 </html>
